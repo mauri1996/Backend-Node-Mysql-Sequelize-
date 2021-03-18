@@ -1,0 +1,19 @@
+primero installar express npm install express
+configurar app.js
+node app.js para iniciar el servidor desde app
+
+
+instalar nodemon 
+y configurar "devstart": "nodemon app.js"
+- npm run devstart para iniciar server con rundev
+
+instalar morgan para ver pediciones y estado del server --save
+
+nota: module.exports = app para exportar el servidor
+
+para usarlo en el app -> app.use(logger('dev')) siendo el app dond esta el server instanciado con express
+
+para instalar mysql-> npm install mysql
+
+
+cuando se envie la peticion pilas q este en header-> Content-Type: application/json
