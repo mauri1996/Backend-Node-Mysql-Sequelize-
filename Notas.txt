@@ -17,3 +17,24 @@ para instalar mysql-> npm install mysql
 
 
 cuando se envie la peticion pilas q este en header-> Content-Type: application/json
+
+
+
+post: http://localhost:3000/api/users/create
+{
+"cedula":"1111111111",
+"nombre":"aaaa",
+"apellido":"bbbb",
+"correo":"aaaaaa@gmail.com",
+"password":"1234"
+}
+
+
+npm install bcrypt para encriptar contraseñas
+
+===================================== se usar sequelize para ORM ========
+npm install sequelize --save
+
+
+
+bcrypt.hashSync(req.body.password,saltRounds) para enriptar contraseña

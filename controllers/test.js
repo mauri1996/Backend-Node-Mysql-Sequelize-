@@ -1,8 +1,10 @@
-const db = require('../service/dataBase')
-db.conectar()
+const Usuario = require('../models/users')
 
 module.exports = {
     list: function(req,res,next){
+
+        //await Usuario.listAllUser(req,)
+
         db.getBase().query(`SELECT * FROM baseOp.usuarios`, function(err,rows,fields){
             if(err) throw err;
             res.status(200).json({
@@ -11,7 +13,7 @@ module.exports = {
         })                
     },
     create: function(req,res,next){
-        //console.log(req.body)        
+        console.log(req.body)        
         db.getBase().query(`
             INSERT INTO baseOp.usuarios 
             (Cedula, Nombre, Apellido, Correo, Password, id) 
