@@ -14,6 +14,7 @@ db.sequelize.sync({force: true})
 app.use(logger('dev'))
 
 const userRoutes = require('./routes/api/user.routes') 
+const tokenRoutes = require('./routes/api/token.routes') 
 
 app.get('/',(req,res)=>{
     res.send('hola mundo!!')
@@ -21,4 +22,5 @@ app.get('/',(req,res)=>{
 
 // uso de rutas
 app.use('/api/users',userRoutes)
+app.use('/api/token',tokenRoutes)
 

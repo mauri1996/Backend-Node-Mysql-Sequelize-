@@ -12,3 +12,6 @@ Content-Type: application/json
 "correo":"aaaaaa@gmail.com",
 "password":"1234"
 }
+
+###
+GET http://localhost:3000/api/token/validar/03e22b296e7a01bc84240838c3b5a71f
