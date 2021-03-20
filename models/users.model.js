@@ -25,12 +25,16 @@ module.exports = (sequelize, DataTypes)=> {
 
     },{})
     
-    // User.associate = (models) =>{
-    //     //console.log('entoppppppppppppppppppp')
-    //     User.hasOne(models.Token,{
-    //         onDelete: "cascade"
-    //     })
-    // }
+    User.associate = (models) =>{
+        
+        User.hasOne(models.tokens,{
+            onDelete: "cascade",            
+            foreignKey:{
+                name: '_id',
+                allowNull: false,
+            }            
+        })
+    }
     // User.associate = function (models) {
     //     User.hasOne(models.Tokens, {
     //         through: 'tokens',

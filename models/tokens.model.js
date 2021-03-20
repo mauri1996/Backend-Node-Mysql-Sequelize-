@@ -19,14 +19,14 @@ module.exports =(sequelize, DataTypes)=> {
     //       foreignKey: 'TokenId',
     //     });
     //   };
-    // Token.associate = (models)=>{
-    //     console.log('entro------------------')
-    //     Token.belongsTo(models.User,{
-    //         foreignKey:{
-    //             allowNull:false
-    //         }
-    //     })
-    // }
+    Token.associate = (models)=>{
+        
+        Token.belongsTo(models.users,{
+            foreignKey:{
+                name: '_id',                
+            }
+        })
+    }
        
     return Token
 

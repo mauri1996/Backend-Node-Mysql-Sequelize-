@@ -20,7 +20,11 @@ cuando se envie la peticion pilas q este en header-> Content-Type: application/j
 
 
 
-post: http://localhost:3000/api/users/create
+###
+
+POST http://localhost:3000/api/users/create 
+Content-Type: application/json
+
 {
 "cedula":"1111111111",
 "nombre":"aaaa",
@@ -38,3 +42,7 @@ npm install sequelize --save
 
 
 bcrypt.hashSync(req.body.password,saltRounds) para enriptar contraseña
+
+
+REST Client para tener test en code
+
