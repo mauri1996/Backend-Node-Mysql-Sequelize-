@@ -1,4 +1,4 @@
-const User = require('./users.model')
+
 
 module.exports =(sequelize, DataTypes)=> {
     const Token = sequelize.define("Tokens" , {        
@@ -11,16 +11,8 @@ module.exports =(sequelize, DataTypes)=> {
             allowNull: false
         }
     },{});
-    // Token.associate = function (models) {
-    //     // associations can be defined here
-    //     Token.belongsToMany(models.Users, {
-    //       through: 'users',
-    //       as: 'usuarios',
-    //       foreignKey: 'TokenId',
-    //     });
-    //   };
-    Token.associate = (models)=>{
-        
+
+    Token.associate = (models)=>{        
         Token.belongsTo(models.users,{
             foreignKey:{
                 name: '_id',                

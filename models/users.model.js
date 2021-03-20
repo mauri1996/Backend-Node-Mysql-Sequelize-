@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes)=> {
     const User = sequelize.define("Users" , {
         cedula:{
@@ -34,14 +33,8 @@ module.exports = (sequelize, DataTypes)=> {
                 allowNull: false,
             }            
         })
-    }
-    // User.associate = function (models) {
-    //     User.hasOne(models.Tokens, {
-    //         through: 'tokens',
-    //         as: 'token',
-    //         foreignKey: 'userId',
-    //     });
-    // }   
+    }    
+
     return User
 
 }

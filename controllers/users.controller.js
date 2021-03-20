@@ -1,8 +1,10 @@
 const db = require('../models')
 const User = db.users
+const Token =db.tokens
 const Op = db.Sequelize.Op
 const bcrypt = require('bcrypt')
 const saltRounds=10
+const crypto = require('crypto')
 
 module.exports = {
     list: (req,res)=>{
@@ -34,7 +36,14 @@ module.exports = {
 
         User.create(user)
             .then(data =>{
-                res.send(data)
+                const token = {
+                    _id: data.id,
+                    token: crypto.randomBytes(16).toString('hex')
+                }
+                Token.create(token)
+                .then(data =>{
+                    res.send({message: 'Usuario creado on exito'})
+                })                
             })
             .catch(err =>{
                 res.status(500).send({
