@@ -1,6 +1,9 @@
 GET http://localhost:3000/api/users 
 
 ###
+GET http://localhost:3000/api/token/validar/d4ea0a224a399c7fe1bdbc792b2036d6
+
+###
 
 POST http://localhost:3000/api/users/create 
 Content-Type: application/json
@@ -13,5 +16,14 @@ Content-Type: application/json
 "password":"1234"
 }
 
+
+
 ###
-GET http://localhost:3000/api/token/validar/03e22b296e7a01bc84240838c3b5a71f
+
+POST http://localhost:3000/api/token
+Content-Type: application/json
+
+{
+"correo":"aaaaaa@gmail.com",
+"password":"1234"
+}
