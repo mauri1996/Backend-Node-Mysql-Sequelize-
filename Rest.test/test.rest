@@ -1,7 +1,7 @@
-GET http://localhost:3000/api/users 
+GET http://localhost:3000/api/users
 
 ###
-GET http://localhost:3000/api/token/validar/d4ea0a224a399c7fe1bdbc792b2036d6
+GET http://localhost:3000/api/token/validar/f78f4005c5ddf3137a8fca1e7ba9fff2
 
 ###
 
@@ -12,7 +12,7 @@ Content-Type: application/json
 "cedula":"1111111111",
 "nombre":"aaaa",
 "apellido":"bbbb",
-"correo":"aaaaaa@gmail.com",
+"correo":"felicita59@ethereal.email",
 "password":"1234"
 }
 
@@ -24,6 +24,6 @@ POST http://localhost:3000/api/token
 Content-Type: application/json
 
 {
-"correo":"aaaaaa@gmail.com",
+"correo":"felicita59@ethereal.email",
 "password":"1234"
 }
