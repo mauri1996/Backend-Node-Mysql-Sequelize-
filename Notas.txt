@@ -46,3 +46,5 @@ bcrypt.hashSync(req.body.password,saltRounds) para enriptar contraseña
 
 REST Client para tener test en code
 
+
+https://ethereal.email/create para enviar mensajes por correo

@@ -1,9 +1,11 @@
+require('dotenv').config()
 /// iniciar servidor
 const app = require('./service/server')
 const logger = require('morgan')  /// libreria para ver peticiones
 
 const db= require('./models')  // models contiene index
 
+//console.log(process.env.NODE_ENV)
 
 /// reinicia la tabla si ya existe
 db.sequelize.sync({force: true})

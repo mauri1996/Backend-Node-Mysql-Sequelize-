@@ -5,6 +5,7 @@ const Op = db.Sequelize.Op
 const bcrypt = require('bcrypt')
 const saltRounds=10
 const crypto = require('crypto')
+const mailer= require('../service/mailer/mailer')
 
 module.exports = {
     list: (req,res)=>{
@@ -41,7 +42,22 @@ module.exports = {
                     token: crypto.randomBytes(16).toString('hex')
                 }
                 Token.create(token)
-                .then(data =>{
+                .then(token =>{
+
+                    const mailOptions={
+                        from: 'no-reply@backend.com',
+                        to: data.correo,
+                        subject: 'Account Verification',
+                        text: 'Hola,\n \n' + 'Please, to verify your account, click on the following link: \n\n'+ 'http://localhost:3000' + '\/api/token/validar\/'+token.token
+                    }
+
+                    mailer.sendMail(mailOptions, function(err){
+                        if(err){
+                            return console.log(err.message)
+                        }
+                        console.log('Mensaje enviado')
+                    })
+
                     res.send({message: 'Usuario creado on exito'})
                 })                
             })

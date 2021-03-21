@@ -44,7 +44,7 @@ module.exports = {
 
         if(!req.body.correo || !req.body.password){
             res.status(400).json({
-                message: 'Correo/contraseña no debe ser vacio'
+                message: 'Correo/contraseña don´t be empty'
             })
         }else{
             User.findOne({
