@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/users
+GET http://localhost:3000/api/users/bba24dab8d0c45657667f1cc461ef6ad
 
 ###
 GET http://localhost:3000/api/token/validar/f78f4005c5ddf3137a8fca1e7ba9fff2

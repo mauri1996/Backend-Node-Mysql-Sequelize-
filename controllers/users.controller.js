@@ -26,7 +26,12 @@ module.exports = {
                     User.findByPk(token._id)
                     .then(user=>{
                         if(user.verificado){
-                            User.findAll({})
+                            User.findAll({
+                                attributes:[
+                                    'cedula','nombre',
+                                    'apellido','correo'
+                                ]
+                            })
                             .then(users =>{
                                 res.status(200).json({
                                     users
